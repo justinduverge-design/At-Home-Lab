@@ -1,4 +1,4 @@
-# At-Home Lab (ISSO Preparation)
+# At-Home Lab
 
 This repository documents a structured home lab used to develop and demonstrate
 cybersecurity professional competencies.
