@@ -1,7 +1,7 @@
 # At-Home Lab (ISSO Preparation)
 
 This repository documents a structured home lab used to develop and demonstrate
-Information System Security Officer (ISSO) competencies.
+cybersecurity professional competencies.
 
 ## Objectives
 - Linux and Windows audit logging
