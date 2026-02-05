@@ -1,33 +1,17 @@
-# Linux Logging Overview (ISSO Baseline)
+# Log Retention Observation
 
-## Purpose
-Establish a baseline understanding of where security-relevant events are logged on Linux and how to retrieve evidence for audits and reviews.
+## Observation
+At the time of review, only recent logs were readily visible for certain components.
 
-## Primary Log Source
-- systemd journal (journald)
-- Service logs accessed via `journalctl`
+## Assessment
+Default log rotation and service restarts can limit historical visibility on lightweight systems. This is typical for small Linux hosts unless retention is explicitly configured.
 
-## Security-Relevant Event Categories
-### Authentication (SSH)
-- Successful logins
-- Failed logins
-- Invalid users
-- Source IP addresses
+## Risk Consideration
+Limited retention can reduce the ability to perform historical review and delayed incident investigation.
 
-### Privilege Use (sudo)
-- User elevation activity
-- Administrative command execution
+## Control Alignment (NIST 800-53)
+- AU-11 (Audit Record Retention)
+- AU-4 (Audit Storage Capacity)
 
-### Availability / System Events
-- Service restarts
-- Reboots and unexpected interruptions
-
-## Evidence Collection Methods
-- `journalctl -u ssh` for SSH events
-- keyword searches for privileged execution (e.g., sudo)
-
-## ISSO Interpretation
-Logs provide accountability and support audit readiness by demonstrating:
-- who accessed the system
-- when access occurred
-- whether privileged actions were performed
+## Status
+Documented as a baseline constraint. Retention tuning is a candidate for a follow-on hardening phase.
